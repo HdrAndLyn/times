@@ -1,0 +1,35 @@
+{% extends 'common/base.html' %}
+
+{% block link %}{% endblock link %}
+
+{% block script %}{% endblock script %}
+
+{% block main %}
+    {% load static %}
+    <div>
+        <img src="{% static 'firstApp/img/matchbg.jpg' %}" alt="..." class="img-rounded">
+    </div>
+    <div>
+        <div>
+            {#        匹配按钮配合ajax请求#}
+        </div>
+        <nav class="navbar navbar-default navbar-fixed-bottom">
+            <div class="container">
+                <!-- Collect the nav links, forms, and other content for toggling -->
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                    <ul class="nav navbar-nav">
+                        <li><a class="navbar-brand" href="{% url 'firstApp:square1' %}">回忆广场</a></li>
+                        <li class="active"><a href="{% url 'firstApp:match1' %}"><span>匹配中心</span></a></li>
+                        <li><a href="{% url 'firstApp:mine1' %}">我的主页</a></li>
+                    </ul>
+                    <form class="navbar-form navbar-left">
+                        <div class="form-group">
+                            <input type="text" class="form-control" placeholder="请输入搜索内容">
+                        </div>
+                        <button type="submit" class="btn btn-default">搜索</button>
+                    </form>
+                </div><!-- /.navbar-collapse -->
+            </div><!-- /.container-fluid -->
+        </nav>
+    </div>
+{% endblock main %}

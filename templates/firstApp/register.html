@@ -1,0 +1,48 @@
+{% extends 'common/base.html' %}
+
+{% block link %}{% endblock link %}
+
+{% block script %}{% endblock script %}
+
+{% block main %}
+    <form class="form-horizontal" action="{% url 'firstApp:register1' %}" method="post">
+    {% csrf_token %}
+        <div class="form-group">
+            <label for="account" class="col-sm-2 control-label">账户:</label>
+            <div class="col-sm-4">
+                <input type="text" class="form-control" name="account" id="account" placeholder="请设置账户">
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="pwd" class="col-sm-2 control-label">密码:</label>
+            <div class="col-sm-4">
+                <input type="password" class="form-control" name="pwd" id="pwd" placeholder="请设置密码">
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="mm" class="col-sm-2 control-label">请确认密码:</label>
+            <div class="col-sm-4">
+                <input type="password" class="form-control" name="pwd2" id="mm" placeholder="请重新输入密码">
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="signs" class="col-sm-2 control-label">个性签名:</label>
+            <div class="col-sm-8">
+                <input type="text" class="form-control" name="sign" id="signs" placeholder="个性签名">
+            </div>
+        </div>
+        <div class="radio">
+            <label class="col-sm-4">
+                <input type="radio" class="col-sm-4" name="sex" id="optionsRadios1" value="1" checked>男
+            </label>
+            <label class="col-sm-4">
+                <input type="radio" class="col-sm-4" name="sex" id="optionsRadios2" value="0">女
+            </label>
+        </div>
+        <div class="form-group">
+            <div class="col-sm-offset-2 col-sm-10">
+                <button type="submit" class="btn btn-default">注册</button>
+            </div>
+        </div>
+    </form>
+{% endblock main %}
